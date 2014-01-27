@@ -13,7 +13,6 @@ laravel-local-website
 ## 项目安装方法
 
 > Git 克隆本项目
-
 > 在本地项目目录执行安装命令
 
     composer install
@@ -28,4 +27,7 @@ laravel-local-website
 
 ![更新结束](/public/assets/img/readme/tg-03.jpg "Optional title")
 
-## API 更新方法
+## API 文档更新方法
+
+> 直接运行 `/api-update-win.sh` 文件即可
+> 程序将自动完成 API 文档的更新
