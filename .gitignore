@@ -1,6 +1,7 @@
 /bootstrap/compiled.php
 /vendor
 /app/config/site.php
+/public/api
 composer.phar
 .DS_Store
 laravel.phar
