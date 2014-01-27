@@ -46,16 +46,16 @@
     <script>
         var _gaq=[['_setAccount','UA-23865777-1'],['_trackPageview']];
         (function(d,t){
-    		var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-        	s.parentNode.insertBefore(g,s)
-    	}(document,'script'));
+            var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)
+        }(document,'script'));
     </script>
 </head>
 
 <body id="index" class="page docs">
 
-	<!-- wrapper -->
+    <!-- wrapper -->
     <div id="wrapper">
 
         <!-- header -->
@@ -91,13 +91,13 @@
         <!-- /header -->
 
         <!-- nav -->
-    	<nav id="primary">
-    	    <div class="boxed">
-    	        <div id="logo-head">
-    	           <a href="//laravel.com"><img src="../assets/img/logo-head.png" alt="Laravel" /></a>
-    	        </div>
+        <nav id="primary">
+            <div class="boxed">
+                <div id="logo-head">
+                   <a href="{{ route('get /') }}"><img src="../assets/img/logo-head.png" alt="Laravel" /></a>
+                </div>
                 <ul>
-                    <li><a href="/">Welcome</a></li>
+                    <li><a href="{{ route('get /') }}">Welcome</a></li>
                     <li class="current-item"><a href="docs" title="Documentation">Documentation</a></li>
                     <li><a href="{{ url('api') }}/{{ DOCS_VERSION }}" title="Laravel Framework API">API</a></li>
                     <li><a href="https://github.com/laravel/laravel" title="Github">Github</a></li>
@@ -129,11 +129,11 @@
                     <!-- /docs content -->
 
                 </article>
-    	    </section>
-    	    <!-- /docs -->
+            </section>
+            <!-- /docs -->
 
         </div>
-    	<!-- /content -->
+        <!-- /content -->
 
         <!-- footer -->
         <footer id="foot" class="textcenter">
@@ -142,10 +142,10 @@
                 <!-- nav -->
                 <nav id="secondary">
                     <div id="logo-foot">
-        	           <a href="//laravel.com"><img src="../assets/img/logo-foot.png" alt="Laravel" /></a>
-        	        </div>
+                       <a href="{{ route('get /') }}"><img src="../assets/img/logo-foot.png" alt="Laravel" /></a>
+                    </div>
                     <ul>
-                        <li><a href="/">Welcome</a></li>
+                        <li><a href="{{ route('get /') }}">Welcome</a></li>
                         <li class="current-item"><a href="docs" title="Documentation">Documentation</a></li>
                         <li><a href="api/{{ DOCS_VERSION }}" title="Laravel Framework API">API</a></li>
                         <li><a href="https://github.com/laravel/laravel" title="Github">Github</a></li>

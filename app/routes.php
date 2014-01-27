@@ -102,7 +102,10 @@ Route::get('docs/{page?}', function($page = null)
 	{
 		if (file_exists($path = base_path().'/docs/'.DOCS_VERSION.'/'.$page.'.md'))
 		{
-			return markdown(file_get_contents($path));
+			// return markdown(file_get_contents($path));
+			$file = File::get($path);
+			$file = str_replace('](/docs/', ']('.route(Route::currentRouteName()).'/', $file);
+			return markdown($file);
 		}
 		else
 		{
