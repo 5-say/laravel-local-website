@@ -1,0 +1,12 @@
+[submodule "docs/4.1"]
+	path = docs/4.1
+	url = https://github.com/laravel/docs
+	branch = 4.1
+[submodule "docs/4.0"]
+	path = docs/4.0
+	url = https://github.com/laravel/docs
+	branch = 4.0
+[submodule "docs/master"]
+	path = docs/master
+	url = https://github.com/laravel/docs
+	branch = master
