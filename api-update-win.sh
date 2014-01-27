@@ -47,7 +47,3 @@ rm -rf cache
 
 # Cleanup
 rm -rf laravel
-
-
-
-read
