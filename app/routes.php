@@ -92,7 +92,10 @@ Route::get('docs/{page?}', function($page = null)
 
 	$index = Cache::remember('docs.'.DOCS_VERSION.'.index', 5, function()
 	{
-		return markdown(file_get_contents(base_path().'/docs/'.DOCS_VERSION.'/documentation.md'));
+		// return markdown(file_get_contents(base_path().'/docs/'.DOCS_VERSION.'/documentation.md'));
+		$file = File::get(base_path('/docs/'.DOCS_VERSION.'/documentation.md'));
+		$file = str_replace('](/docs/', ']('.route(Route::currentRouteName()).'/', $file);
+		return markdown($file);
 	});
 
 	$contents = Cache::remember('docs.'.DOCS_VERSION.'.'.$page, 5, function() use ($page)
