@@ -12,8 +12,20 @@ laravel-local-website
 
 ## 项目安装方法
 
+> Git 克隆本项目
+
+> 在本地项目目录执行安装命令
+
+    composer install
 
 ## 文档更新方法
 
+> 直接在项目中更新子模块即可
+
+![选择菜单](/public/assets/img/readme/tg-01.jpg "Optional title")
+
+![全选更新](/public/assets/img/readme/tg-02.jpg "Optional title")
+
+![更新结束](/public/assets/img/readme/tg-03.jpg "Optional title")
 
 ## API 更新方法
