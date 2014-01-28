@@ -7,6 +7,7 @@ laravel-local-website
 - 由于原项目在 windows 下安装存在诸多不便，因此略作修改。
 - 由于官方项目有自己的部署需求，当前项目的改动不便并入分支，因此本项目作为新的项目独立发布。
 - 有条件有能力的朋友建议直接使用原官方项目。
+- 2014-01-29 整合 [golaravel.com](http://www.golaravel.com/) 的中文文档。源自**王赛**先生的开源项目 [golaravel/laravel4.1docs](https://github.com/golaravel/laravel4.1docs) 和 [golaravel/laravel4docs](https://github.com/golaravel/laravel4docs)。
 
 ---
 
