@@ -73,7 +73,7 @@ function is_active($name='')
                 <div id="tagline">
                     <h1>Documentation.
                         <small>中文文档由
-                            <a href="http://www.golaravel.com" style="color:white;">golaravel.com</a> 提供
+                            <a href="http://www.golaravel.com" target="_blank" style="color:white;">golaravel.com</a> 提供
                         </small>
                     </h1>
                 </div>
