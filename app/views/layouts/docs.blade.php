@@ -1,3 +1,12 @@
+<?php
+function is_active($name='')
+{
+    if (DOCS_VERSION===$name)
+        return ' class="current"';
+    else
+        return '';
+}
+?>
 <!doctype html>
 
 <html lang="en">
@@ -62,26 +71,22 @@
             <div class="boxed">
                 <!-- tagline -->
                 <div id="tagline">
-                    <h1>Documentation.</h1>
+                    <h1>Documentation.
+                        <small>中文文档由
+                            <a href="http://www.golaravel.com" style="color:white;">golaravel.com</a> 提供
+                        </small>
+                    </h1>
                 </div>
                 <!-- /tagline -->
 
                 <!-- version -->
                 <div id="version">
                     <ul class="nolist">
-                        @if (DOCS_VERSION == 'master')
-                            <li class="current"><a href="{{ url('docs/dev') }}" title="Dev">Dev</a></li>
-                            <li><a href="{{ url('docs/4-1') }}" title="4.1">4.1</a></li>
-                            <li><a href="{{ url('docs/4-0') }}" title="4.0">4.0</a></li>
-                        @elseif (DOCS_VERSION == '4.1')
-                            <li><a href="{{ url('docs/dev') }}" title="Dev">Dev</a></li>
-                            <li class="current"><a href="{{ url('docs/4-1') }}" title="4.1">4.1</a></li>
-                            <li><a href="{{ url('docs/4-0') }}" title="4.0">4.0</a></li>
-                        @else
-                            <li><a href="{{ url('docs/dev') }}" title="Dev">Dev</a></li>
-                            <li><a href="{{ url('docs/4-1') }}" title="4.1">4.1</a></li>
-                            <li class="current"><a href="{{ url('docs/4-0') }}" title="4.0">4.0</a></li>
-                        @endif
+                        <li{{ is_active('master') }}><a href="{{ url('docs/dev') }}" title="Dev">Dev</a></li>
+                        <li{{ is_active('4.1') }}><a href="{{ url('docs/4-1') }}" title="4.1">4.1</a></li>
+                        <li{{ is_active('4.1-cn') }}><a href="{{ url('docs/4-1-cn') }}" title="4.1-cn">4.1-cn</a></li>
+                        <li{{ is_active('4.0') }}><a href="{{ url('docs/4-0') }}" title="4.0">4.0</a></li>
+                        <li{{ is_active('4.0-cn') }}><a href="{{ url('docs/4-0-cn') }}" title="4.0-cn">4.0-cn</a></li>
                     </ul>
                 </div>
                 <!-- /version -->

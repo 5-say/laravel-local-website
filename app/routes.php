@@ -83,26 +83,43 @@ Route::get('docs/4-1', function()
 	return Redirect::back();
 });
 
+// 中文 4.1 文档
+Route::get('docs/4-1-cn', function()
+{
+	Cookie::queue('docs_version', '4.1-cn', 525600);
+
+	return Redirect::back();
+});
+
+// 中文 4.0 文档
+Route::get('docs/4-0-cn', function()
+{
+	Cookie::queue('docs_version', '4.0-cn', 525600);
+
+	return Redirect::back();
+});
+
 /**
  * Main Documentation Route...
  */
 Route::get('docs/{page?}', function($page = null)
 {
 	if (is_null($page)) $page = 'introduction';
+	$docPath = base_path('/docs/'.DOCS_VERSION.'/');
+	// 对中文文档的支持
+	ends_with(DOCS_VERSION, 'cn') AND $docPath = base_path('/docs/'.DOCS_VERSION.'/cn/');
 
-	$index = Cache::remember('docs.'.DOCS_VERSION.'.index', 5, function()
+	$index = Cache::remember('docs.'.DOCS_VERSION.'.index', 5, function() use($docPath)
 	{
-		// return markdown(file_get_contents(base_path().'/docs/'.DOCS_VERSION.'/documentation.md'));
-		$file = File::get(base_path('/docs/'.DOCS_VERSION.'/documentation.md'));
+		$file = File::get($docPath.'documentation.md');
 		$file = str_replace('](/docs/', ']('.route(Route::currentRouteName()).'/', $file);
 		return markdown($file);
 	});
 
-	$contents = Cache::remember('docs.'.DOCS_VERSION.'.'.$page, 5, function() use ($page)
+	$contents = Cache::remember('docs.'.DOCS_VERSION.'.'.$page, 5, function() use ($page, $docPath)
 	{
-		if (file_exists($path = base_path().'/docs/'.DOCS_VERSION.'/'.$page.'.md'))
+		if (file_exists($path = $docPath.$page.'.md'))
 		{
-			// return markdown(file_get_contents($path));
 			$file = File::get($path);
 			$file = str_replace('](/docs/', ']('.route(Route::currentRouteName()).'/', $file);
 			return markdown($file);
@@ -118,6 +135,7 @@ Route::get('docs/{page?}', function($page = null)
 	return View::make('layouts.docs', compact('index', 'contents'));
 });
 
+// 本地化 JS 文件
 Route::get('js/run_prettify.js', array('as'=>'run_prettify.js', function()
 {
 	$path = public_path('assets/js');
