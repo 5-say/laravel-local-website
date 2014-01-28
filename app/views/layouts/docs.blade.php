@@ -22,15 +22,15 @@
     <script src="{{ asset('/') }}assets/js/jquery.js"></script>
 
     <!-- prettyprint -->
-    <script src="{{ asset('/') }}assets/js/run_prettify.js"></script>
+    <script src="{{ route('run_prettify.js') }}"></script>
 
     <!-- load up our js -->
     <script src="{{ asset('/') }}assets/js/plugins.js"></script>
     <script src="{{ asset('/') }}assets/js/application.js"></script>
 
     <!-- fonts -->
-    <script src="{{ asset('/') }}assets/js/source-sans-pro-n3-i3-n4-i4-n6-i6-n7-i7.js"></script>
-    <script src="{{ asset('/') }}assets/js/source-code-pro.js"></script>
+    <link href="{{ asset('/') }}assets/css/source-sans-pro-n3-i3-n4-i4-n6-i6-n7-i7.js.css" rel="stylesheet">
+    <link href="{{ asset('/') }}assets/css/source-code-pro.js.css" rel="stylesheet">
 
     <!-- some conditionals for ie -->
     <!--[if IE]><link href="{{ asset('/') }}assets/css/ie.css" rel="stylesheet" type="text/css" /><![endif]-->

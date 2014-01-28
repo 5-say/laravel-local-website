@@ -117,3 +117,11 @@ Route::get('docs/{page?}', function($page = null)
 
 	return View::make('layouts.docs', compact('index', 'contents'));
 });
+
+Route::get('js/run_prettify.js', array('as'=>'run_prettify.js', function()
+{
+	$path = public_path('assets/js');
+	View::addNamespace('js', $path);
+    return Response::view('js::run_prettify', array(), 200, array('Content-Type'=>'application/javascript'));
+}));
+
