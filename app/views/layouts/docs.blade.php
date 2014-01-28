@@ -13,7 +13,7 @@
     <meta name="keywords" content="laravel, php, framework, web, artisans, taylor otwell">
 
     <!-- favicon -->
-    <link rel="shortcut icon" href="/favicon.png?v=2">
+    <link rel="shortcut icon" href="{{ asset('favicon.png?v=2') }}">
 
     <!-- we're minifying and combining all our css -->
     <link href="{{ asset('/') }}assets/css/style.css" rel="stylesheet">
