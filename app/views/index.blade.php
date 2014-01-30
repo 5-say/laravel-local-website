@@ -14,7 +14,8 @@
         <!-- callto action -->
         <div id="callto" class="animated bounceInLeft">
             <a href="docs/quick" class="button large animated shake">Quickstart</a>
-            <a href="http://conference.laravel.com" class="button large animated shake">Laracon 2014</a>
+            <a href="" class="button large animated shake">4.1-node</a>
+            <a href="{{ route('composer-cn') }}" class="button large animated shake">composer</a>
         </div>
         <!-- /callto action -->
 

@@ -1,12 +1,3 @@
-<?php
-function is_active($name='')
-{
-    if (DOCS_VERSION===$name)
-        return ' class="current"';
-    else
-        return '';
-}
-?>
 <!doctype html>
 
 <html lang="en">
@@ -59,6 +50,14 @@ function is_active($name='')
         //     s.parentNode.insertBefore(g,s)
         // }(document,'script'));
     </script>
+    <style>
+#documentation #docs-content blockquote {
+    width: 883px;
+}
+nav#primary ul {
+    margin-top:-23px;
+}
+    </style>
 </head>
 
 <body id="index" class="page docs">
@@ -67,14 +66,12 @@ function is_active($name='')
     <div id="wrapper">
 
         <!-- header -->
-        <header id="header" role="header">
+        <header id="header" role="header" style="height:3em;">
             <div class="boxed">
                 <!-- tagline -->
-                <div id="tagline">
-                    <h1>
-                        <small>中文文档由
-                            <a href="http://www.golaravel.com" target="_blank" style="color:white;font-size:1.5em;">golaravel.com</a> 提供
-                        </small>
+                <div id="tagline" style="padding-top:0;">
+                    <h1 style="line-height:0.5em;">
+                        composer 中文文档
                     </h1>
                 </div>
                 <!-- /tagline -->
@@ -82,11 +79,7 @@ function is_active($name='')
                 <!-- version -->
                 <div id="version">
                     <ul class="nolist">
-                        <li{{ is_active('master') }}><a href="{{ url('docs/dev') }}" title="Dev">Dev</a></li>
-                        <li{{ is_active('4.1') }}><a href="{{ url('docs/4-1') }}" title="4.1">4.1</a></li>
-                        <li{{ is_active('4.1-cn') }}><a href="{{ url('docs/4-1-cn') }}" title="4.1-cn">4.1-cn</a></li>
-                        <li{{ is_active('4.0') }}><a href="{{ url('docs/4-0') }}" title="4.0">4.0</a></li>
-                        <li{{ is_active('4.0-cn') }}><a href="{{ url('docs/4-0-cn') }}" title="4.0-cn">4.0-cn</a></li>
+                        <li><a href="https://github.com/5-say/composer-doc-cn" title="Dev">Github</a></li>
                     </ul>
                 </div>
                 <!-- /version -->
@@ -95,18 +88,12 @@ function is_active($name='')
         <!-- /header -->
 
         <!-- nav -->
-        <nav id="primary">
+        <nav id="primary" style="height:1.5em;">
             <div class="boxed">
-                <div id="logo-head">
-                   <a href="{{ route('get /') }}"><img src="{{ asset('/') }}assets/img/logo-head.png" alt="Laravel" /></a>
-                </div>
                 <ul>
                     <li><a href="{{ route('get /') }}">Welcome</a></li>
-                    <li class="current-item"><a href="docs" title="Documentation">Documentation</a></li>
-                    <li><a href="{{ url('api') }}/{{ DOCS_VERSION }}" title="Laravel Framework API">API</a></li>
-                    <li><a href="https://github.com/laravel/laravel" title="Github">Github</a></li>
-                    <li><a href="http://forums.laravel.io/" title="Laravel Forums">Forums</a></li>
-                    <li><a href="http://twitter.com/laravelphp" title="Laravel on Twitter">Twitter</a></li>
+                    <li><a href="{{ route('composer-cn') }}">readme</a></li>
+                    <li class="current-item"><a href="#index" >回到顶部</a></li>
                 </ul>
             </div>
         </nav>
@@ -119,15 +106,8 @@ function is_active($name='')
             <section id="documentation">
                 <article class="boxed">
 
-                    <!-- docs nav -->
-                    <nav id="docs">
-                        <!-- Pull table of contents -->
-                        {{ $index }}
-                    </nav>
-                    <!-- /docs nav -->
-
                     <!-- docs content -->
-                    <div id="docs-content">
+                    <div id="docs-content" style="width:924px;">
                         {{ $contents }}
                     </div>
                     <!-- /docs content -->

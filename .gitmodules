@@ -16,3 +16,6 @@
 [submodule "docs/4.0-cn"]
 	path = docs/4.0-cn
 	url = https://github.com/golaravel/laravel4docs.git
+[submodule "docs/composer-doc-cn"]
+	path = docs/composer-doc-cn
+	url = https://github.com/5-say/composer-doc-cn.git
