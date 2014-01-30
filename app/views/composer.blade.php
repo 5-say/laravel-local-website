@@ -51,11 +51,36 @@
         // }(document,'script'));
     </script>
     <style>
+nav#primary ul {
+    margin-top:-23px;
+}
 #documentation #docs-content blockquote {
     width: 883px;
 }
-nav#primary ul {
-    margin-top:-23px;
+#documentation #docs-content ul {
+    padding: 0 0 1em 2em;
+}
+#documentation code {
+    font-size: 1em;
+    font-weight: normal;
+}
+#documentation strong {
+    color: #E72A50;
+}
+#documentation table th {
+    background-color: #f7f7f7;
+}
+#documentation table td {
+    line-height: 1.5em;
+    background-color: #f3f3f3;
+}
+#documentation li p {
+    margin-bottom: 1em;
+    padding-left: 1em;
+    margin-top: -1.5em;
+}
+#documentation blockquote p strong {
+    color: #333;
 }
     </style>
 </head>
@@ -79,7 +104,7 @@ nav#primary ul {
                 <!-- version -->
                 <div id="version">
                     <ul class="nolist">
-                        <li><a href="https://github.com/5-say/composer-doc-cn" title="Dev">Github</a></li>
+                        <li><a target="_blank" href="https://github.com/5-say/composer-doc-cn" title="Dev">Github</a></li>
                     </ul>
                 </div>
                 <!-- /version -->
@@ -92,7 +117,7 @@ nav#primary ul {
             <div class="boxed">
                 <ul>
                     <li><a href="{{ route('get /') }}">Welcome</a></li>
-                    <li><a href="{{ route('composer-cn') }}">readme</a></li>
+                    <li><a href="{{ route('composer-cn') }}">readme.md</a></li>
                     <li class="current-item"><a href="#index" >回到顶部</a></li>
                 </ul>
             </div>

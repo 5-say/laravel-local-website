@@ -163,7 +163,7 @@ Route::get('composer-cn/{page?}', array('as'=>'composer-cn', function($page = nu
 	}
 }));
 
-Route::get('composer-cn/{path_1?}/{page?}', array('as'=>'composer-cn.', function($path_1, $page = null)
+Route::get('composer-cn/{path_1?}/{page?}', function($path_1, $page = null)
 {
 	if (is_null($page)) $page = 'README';
 	$docPath = base_path('docs/composer-doc-cn/'.$path_1.'/');
@@ -178,9 +178,9 @@ Route::get('composer-cn/{path_1?}/{page?}', array('as'=>'composer-cn.', function
 	{
 		return Redirect::to('composer-cn');
 	}
-}));
+});
 
-Route::get('composer-cn/{path_1?}/{path_2?}/{page?}', array('as'=>'composer-cn..', function($path_1, $path_2, $page = null)
+Route::get('composer-cn/{path_1?}/{path_2?}/{page?}', function($path_1, $path_2, $page = null)
 {
 	if (is_null($page)) $page = 'README';
 	$docPath = base_path('docs/composer-doc-cn/'.$path_1.'/'.$path_2.'/');
@@ -195,4 +195,4 @@ Route::get('composer-cn/{path_1?}/{path_2?}/{page?}', array('as'=>'composer-cn..
 	{
 		return Redirect::to('composer-cn');
 	}
-}));
+});
