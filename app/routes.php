@@ -109,26 +109,20 @@ Route::get('docs/{page?}', function($page = null)
 	// 对中文文档的支持
 	ends_with(DOCS_VERSION, 'cn') AND $docPath = base_path('/docs/'.DOCS_VERSION.'/cn/');
 
-	$index = Cache::remember('docs.'.DOCS_VERSION.'.index', 5, function() use($docPath)
-	{
-		$file = File::get($docPath.'documentation.md');
-		$file = str_replace('](/docs/', ']('.route(Route::currentRouteName()).'/', $file);
-		return markdown($file);
-	});
+	$file = File::get($docPath.'documentation.md');
+	$file = str_replace('](/docs/', ']('.route(Route::currentRouteName()).'/', $file);
+	$index = markdown($file);
 
-	$contents = Cache::remember('docs.'.DOCS_VERSION.'.'.$page, 5, function() use ($page, $docPath)
+	if (file_exists($path = $docPath.$page.'.md'))
 	{
-		if (file_exists($path = $docPath.$page.'.md'))
-		{
-			$file = File::get($path);
-			$file = str_replace('](/docs/', ']('.route(Route::currentRouteName()).'/', $file);
-			return markdown($file);
-		}
-		else
-		{
-			return 'Not Found';
-		}
-	});
+		$file = File::get($path);
+		$file = str_replace('](/docs/', ']('.route(Route::currentRouteName()).'/', $file);
+		$contents = markdown($file);
+	}
+	else
+	{
+		$contents = 'Not Found';
+	}
 
 	if ($contents == 'Not Found') return Redirect::to('docs');
 
