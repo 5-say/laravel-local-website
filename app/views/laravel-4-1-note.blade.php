@@ -41,6 +41,8 @@
     <!-- If less than IE8 add some JS for the webfont icons -->
     <!--[if lt IE 8]><script src="{{ asset('/') }}assets/js/ie_font.js"></script><![endif]-->
 
+    <link href="{{ asset('/') }}assets/bootstrap-3.0.3/modals/css/bootstrap.min.css" rel="stylesheet">
+    <script src="{{ asset('/') }}assets/bootstrap-3.0.3/modals/js/bootstrap.min.js"></script>
     <style>
 nav#primary ul {
     margin-top:-23px;
@@ -87,7 +89,7 @@ nav#primary ul {
                 <!-- tagline -->
                 <div id="tagline" style="padding-top:0;">
                     <h1 style="line-height:0.5em;">
-                        composer 中文文档
+                        Laravel 4.1 速查笔记
                     </h1>
                 </div>
                 <!-- /tagline -->
@@ -110,6 +112,10 @@ nav#primary ul {
                     <li><a href="{{ route('get /') }}">Welcome</a></li>
                     <li><a href="{{ route('composer-cn') }}">readme.md</a></li>
                     <li class="current-item"><a href="#index" >回到顶部</a></li>
+                    <li style="margin-left:1em; padding-top:0.8em;">
+                        <button type="button" style="padding:0.2em 0.5em;background-color:#EB706B;"
+                            data-toggle="modal" data-target="#myModal">Menu</button>
+                    </li>
                 </ul>
             </div>
         </nav>

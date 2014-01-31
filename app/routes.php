@@ -190,3 +190,6 @@ Route::get('composer-cn/{path_1?}/{path_2?}/{page?}', function($path_1, $path_2,
 		return Redirect::to('composer-cn');
 	}
 });
+
+
+
