@@ -97,7 +97,7 @@ nav#primary ul {
                 <!-- version -->
                 <div id="version">
                     <ul class="nolist">
-                        <li><a target="_blank" href="https://github.com/5-say/laravel-note" title="Dev">Github</a></li>
+                        <li><a target="_blank" href="https://github.com/5-say/laravel-4.1-note" title="Dev">Github</a></li>
                     </ul>
                 </div>
                 <!-- /version -->
