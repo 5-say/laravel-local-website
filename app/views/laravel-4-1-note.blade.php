@@ -97,7 +97,7 @@ nav#primary ul {
                 <!-- version -->
                 <div id="version">
                     <ul class="nolist">
-                        <li><a target="_blank" href="https://github.com/5-say/composer-doc-cn" title="Dev">Github</a></li>
+                        <li><a target="_blank" href="https://github.com/5-say/laravel-note" title="Dev">Github</a></li>
                     </ul>
                 </div>
                 <!-- /version -->
@@ -110,8 +110,8 @@ nav#primary ul {
             <div class="boxed">
                 <ul>
                     <li><a href="{{ route('get /') }}">Welcome</a></li>
-                    <li><a href="{{ route('composer-cn') }}">readme.md</a></li>
-                    <li class="current-item"><a href="#index" >回到顶部</a></li>
+                    <li><a href="{{ route('4.1-note') }}/README.MD">readme.md</a></li>
+                    <li class="current-item"><a href="{{ route('4.1-note') }}">索引</a></li>
                     <li style="margin-left:1em; padding-top:0.8em;">
                         <button type="button" style="padding:0.2em 0.5em;background-color:#EB706B;"
                             data-toggle="modal" data-target="#myModal">Menu</button>
@@ -186,9 +186,8 @@ nav#primary ul {
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
-        <div class="modal-content">
-
-    55555
+        <div class="modal-content" style="padding:2em;">
+            {{ $list }}
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->

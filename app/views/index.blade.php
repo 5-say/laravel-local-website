@@ -14,7 +14,7 @@
         <!-- callto action -->
         <div id="callto" class="animated bounceInLeft">
             <a href="docs/quick" class="button large animated shake">Quickstart</a>
-            <a href="" class="button large animated shake">4.1-node</a>
+            <a href="{{ route('4.1-note') }}" class="button large animated shake">4.1-note</a>
             <a href="{{ route('composer-cn') }}" class="button large animated shake">composer</a>
         </div>
         <!-- /callto action -->
