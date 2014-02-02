@@ -1,9 +1,18 @@
+<?php
+$is_active = function($name='') use($active)
+{
+    if ($active===$name)
+        return ' class="current-item"';
+    else
+        return '';
+}
+?>
 <!doctype html>
 
 <html lang="en">
 
 <head>
-    <title>Laravel - The PHP Framework For Web Artisans.</title>
+    <title>Laravel 4.1 速查笔记</title>
 
     <!-- meta -->
     <meta charset="utf-8">
@@ -44,37 +53,37 @@
     <link href="{{ asset('/') }}assets/bootstrap-3.0.3/modals/css/bootstrap.min.css" rel="stylesheet">
     <script src="{{ asset('/') }}assets/bootstrap-3.0.3/modals/js/bootstrap.min.js"></script>
     <style>
-nav#primary ul {
-    margin-top:-23px;
-}
-#documentation #docs-content blockquote {
-    width: 883px;
-}
-#documentation #docs-content ul {
-    padding: 0 0 1em 2em;
-}
-#documentation code {
-    font-size: 1em;
-    font-weight: normal;
-}
-#documentation strong {
-    color: #E72A50;
-}
-#documentation table th {
-    background-color: #f7f7f7;
-}
-#documentation table td {
-    line-height: 1.5em;
-    background-color: #f3f3f3;
-}
-#documentation li p {
-    margin-bottom: 1em;
-    padding-left: 1em;
-    margin-top: -1.5em;
-}
-#documentation blockquote p strong {
-    color: #333;
-}
+        nav#primary ul {
+            margin-top:-23px;
+        }
+        #documentation #docs-content blockquote {
+            width: 883px;
+        }
+        #documentation #docs-content ul {
+            padding: 0 0 1em 2em;
+        }
+        #documentation code {
+            font-size: 1em;
+            font-weight: normal;
+        }
+        #documentation strong {
+            color: #E72A50;
+        }
+        #documentation table th {
+            background-color: #f7f7f7;
+        }
+        #documentation table td {
+            line-height: 1.5em;
+            background-color: #f3f3f3;
+        }
+        #documentation li p {
+            margin-bottom: 1em;
+            padding-left: 1em;
+            margin-top: -1.5em;
+        }
+        #documentation blockquote p strong {
+            color: #333;
+        }
     </style>
 </head>
 
@@ -110,8 +119,8 @@ nav#primary ul {
             <div class="boxed">
                 <ul>
                     <li><a href="{{ route('get /') }}">Welcome</a></li>
-                    <li><a href="{{ route('4.1-note') }}/README.MD">readme.md</a></li>
-                    <li class="current-item"><a href="{{ route('4.1-note') }}">索引</a></li>
+                    <li{{ $is_active('README.MD') }}><a href="{{ route('4.1-note') }}/README.MD">readme.md</a></li>
+                    <li{{ $is_active('index') }}><a href="{{ route('4.1-note') }}">索引</a></li>
                     <li style="margin-left:1em; padding-top:0.8em;">
                         <button type="button" style="padding:0.2em 0.5em;background-color:#EB706B;"
                             data-toggle="modal" data-target="#myModal">Menu</button>
