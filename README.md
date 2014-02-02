@@ -34,3 +34,9 @@ laravel-local-website
 
 > 直接运行 `/api-update-win.sh` 文件即可
 > 程序将自动完成 API 文档的更新
+
+## 成功部署后的项目截图
+
+![Alt text](/public/assets/img/readme/01.jpg "Optional title")
+
+![Alt text](/public/assets/img/readme/02.jpg "Optional title")

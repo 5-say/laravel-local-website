@@ -84,6 +84,9 @@ $is_active = function($name='') use($active)
         #documentation blockquote p strong {
             color: #333;
         }
+        #documentation img {
+            max-width: 100%;
+        }
     </style>
 </head>
 

@@ -77,11 +77,13 @@ Route::group(array('prefix'=>'4.1-note'), function()
             }
         }
         // 构造目录列表、索引文件
-        $list = '- 目录'.PHP_EOL;
+        $list     = '- 目录'.PHP_EOL;
         $contents = '# 项目索引';
-        $i = 0;
+        $i        = 0;
         foreach ($allFilesArray as $key => $value)
         {
+            if (starts_with($key, 'img')) continue; // 忽略图片目录（递归）
+            if ($key === '') continue;              // 忽略根目录（非递归）
             $key   = strtr($key, '\\', '/');
             $list .= '  - [/'.$key.'](#h-'.++$i.')'.PHP_EOL;
             $contents .= '<a name="h-'.$i.'"></a>'.PHP_EOL;
@@ -99,15 +101,16 @@ Route::group(array('prefix'=>'4.1-note'), function()
     {
         // 构造文件路径
         $docPath  = base_path('docs/'.$docDirectory);
-// dd(ends_with($page, '.md'));
+        // 图片文件处理
         if (! ends_with($page, '.md'))
         {
             $imgPath = $docPath.'/'.strtr($page, '>', '/');
             if (file_exists($imgPath))
-                return Response::make(File::get($imgPath))->header('Content-Type', 'image/png');
+                return Response::make(File::get($imgPath))->header('Content-Type', 'image/'.File::extension($imgPath));
+            else
+                return Redirect::route($routeName);
         }
-
-        // 解析文件
+        // 解析 md 文件
         $markdown = analyzeMarkdown($docPath, $page, $routeName);
         // 解析失败，返回起始页
         if ($markdown === false) return Redirect::route($routeName);
