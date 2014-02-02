@@ -99,6 +99,14 @@ Route::group(array('prefix'=>'4.1-note'), function()
     {
         // 构造文件路径
         $docPath  = base_path('docs/'.$docDirectory);
+// dd(ends_with($page, '.md'));
+        if (! ends_with($page, '.md'))
+        {
+            $imgPath = $docPath.'/'.strtr($page, '>', '/');
+            if (file_exists($imgPath))
+                return Response::make(File::get($imgPath))->header('Content-Type', 'image/png');
+        }
+
         // 解析文件
         $markdown = analyzeMarkdown($docPath, $page, $routeName);
         // 解析失败，返回起始页

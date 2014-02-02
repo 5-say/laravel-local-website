@@ -9,6 +9,7 @@ laravel-local-website
 - 有条件有能力的朋友建议直接使用原官方项目。
 - 2014-01-29 整合 [golaravel.com](http://www.golaravel.com/) 的中文文档。源自**王赛**先生的开源项目 [golaravel/laravel4.1docs](https://github.com/golaravel/laravel4.1docs) 和 [golaravel/laravel4docs](https://github.com/golaravel/laravel4docs)。
 - 2014-01-30 整合 Composer 中文文档 [5-say/composer-doc-cn](https://github.com/5-say/composer-doc-cn)。
+- 2014-02-02 整合 laravel-4.1-速查笔记 [5-say/laravel-4.1-note](https://github.com/5-say/laravel-4.1-note)。
 
 ---
 
