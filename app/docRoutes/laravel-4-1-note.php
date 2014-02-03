@@ -85,9 +85,9 @@ Route::group(array('prefix'=>'4.1-note'), function()
             if (starts_with($key, 'img')) continue; // 忽略图片目录（递归）
             if ($key === '') continue;              // 忽略根目录（非递归）
             $key   = strtr($key, '\\', '/');
-            $list .= '  - [/'.$key.'](#h-'.++$i.')'.PHP_EOL;
+            $list .= '  - ['.$key.'](#h-'.++$i.')'.PHP_EOL;
             $contents .= '<a name="h-'.$i.'"></a>'.PHP_EOL;
-            $contents .= '## /'.$key.PHP_EOL;
+            $contents .= '## '.$key.PHP_EOL;
             foreach ($value as $vv)
             {
                 $vv        = strtr($vv, '\\', '/');
