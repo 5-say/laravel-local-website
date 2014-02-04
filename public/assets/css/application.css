@@ -673,6 +673,7 @@ Quotes
     float: left;
     position: relative;
     z-index: 25;
+    overflow: hidden;
 }
 
 #quotes ul li
