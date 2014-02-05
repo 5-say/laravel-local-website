@@ -10,6 +10,7 @@ laravel-local-website
 - 2014-01-29 整合 [golaravel.com](http://www.golaravel.com/) 的中文文档。源自**王赛**先生的开源项目 [golaravel/laravel4.1docs](https://github.com/golaravel/laravel4.1docs) 和 [golaravel/laravel4docs](https://github.com/golaravel/laravel4docs)。
 - 2014-01-30 整合 Composer 中文文档 [5-say/composer-doc-cn](https://github.com/5-say/composer-doc-cn)。
 - 2014-02-02 整合 laravel-4.1-速查笔记 [5-say/laravel-4.1-note](https://github.com/5-say/laravel-4.1-note)。
+- 2014-02-05 整合 PHP-PSR-代码标准中文版 [hfcorriez/fig-standards](https://github.com/hfcorriez/fig-standards)。
 
 ---
 
@@ -37,6 +38,8 @@ laravel-local-website
 
 ## 成功部署后的项目截图
 
+![Alt text](/public/assets/img/readme/mx3E2CC.png "Optional title")
+
 ![Alt text](/public/assets/img/readme/01.jpg "Optional title")
 
-![Alt text](/public/assets/img/readme/02.jpg "Optional title")
+![Alt text](/public/assets/img/readme/mx3BBFD.png "Optional title")
