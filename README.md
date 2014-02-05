@@ -40,6 +40,8 @@ laravel-local-website
 
 ![Alt text](/public/assets/img/readme/mx3E2CC.png "Optional title")
 
+![Alt text](/public/assets/img/readme/mx35ABC.png "Optional title")
+
 ![Alt text](/public/assets/img/readme/01.jpg "Optional title")
 
 ![Alt text](/public/assets/img/readme/mx3BBFD.png "Optional title")
