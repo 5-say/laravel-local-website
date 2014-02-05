@@ -71,11 +71,19 @@ Route::group(array('prefix'=>'psr'), function()
                 return Redirect::route($routeName);
         }
         // 解析 md 文件
-        $markdown = analyzeMarkdown($docPath, $page, $routeName);
+        $markdown = analyzeMarkdown($docPath, $page, $routeName, function($file){
+            // 额外修正的项目根目录链接
+            $file = str_replace(
+                'https://github.com/hfcorriez/fig-standards/blob/zh_CN/',
+                '/',
+                $file
+            );
+        });
         // 解析失败，返回起始页
         if ($markdown === false) return Redirect::route($routeName);
         // 解析成功
         list($list, $contents) = $markdown;
+        // 返回视图响应
         $active = $page;
         return View::make($view, compact('list', 'contents', 'active'));
     });
