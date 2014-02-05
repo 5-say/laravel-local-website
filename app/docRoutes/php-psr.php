@@ -1,55 +1,16 @@
 <?php
 
-function analyzeMarkdown($docPath, $page, $baseRouteName)
-{
-# 获取文件内容
-    // 中文系统路径转码
-    $page     = strtr($page, '>', '/');
-    $docPath .= '/'.$page;
-    if ($_SERVER['HTTP_ACCEPT_LANGUAGE'] == 'zh-CN')
-        $docPath = iconv('UTF-8', 'GBK', $docPath);
-    // 若文件不存在则返回 false
-    if (! file_exists($docPath)) return false;
-    $file = File::get($docPath);
-
-# 解析 contents
-    // 变更内部链接文件夹分隔符
-    $file = preg_replace_callback('/(\[.+\(\/)(.+\))/', function($matches)
-    {
-        return $matches[1].strtr($matches[2], '/', '>');
-    }, $file);
-    // 变更顶级目录 URL 指向
-    $file = str_replace('](/', ']('.route($baseRouteName).'/', $file);
-    // 解析 md 文件
-    $contents = markdown($file);
-
-# 构造当前页面目录，并添加锚记
-    $i = 0; $list = '';
-    $contents = preg_replace_callback('/<h([1-6])>(.+)<\/h\\1>/', function($matches) use(&$i, &$list)
-    {
-        // 为标题添加锚记
-        $new   = '<a name="h'.$matches[1].'-'.++$i.'"></a>'.$matches[0];
-        // 获取 md 格式标题列表
-        $list .= str_repeat('  ', $matches[1]).'- ['.$matches[2].'](#h'.$matches[1].'-'.$i.')'.PHP_EOL;
-        return $new;
-    }, $contents);
-
-# 返回数据
-    // 请使用 list 函数接收返回值
-    return array(markdown($list), $contents);
-}
-
-
 /**
- * laravel 4.1 速查笔记
+ * PHP-PSR-代码标准中文版
  */
 
-Route::group(array('prefix'=>'4.1-note'), function()
+Route::group(array('prefix'=>'psr'), function()
 {
-    $routeName    = '4.1-note';
-    $docDirectory = 'laravel-4.1-note';
+    $routeName    = 'psr';
+    $docDirectory = 'fig-standards';
+    $view         = 'psr';
 
-    Route::get('/', array('as'=>$routeName, function() use($routeName, $docDirectory)
+    Route::get('/', array('as'=>$routeName, function() use($routeName, $docDirectory, $view)
     {
         // 读取目录文件信息
         $allFiles = File::allFiles(base_path('docs/'.$docDirectory));
@@ -93,10 +54,10 @@ Route::group(array('prefix'=>'4.1-note'), function()
                 $contents .= '  - ['.str_replace($key.'/', '', $vv).']('.route($routeName).'/'.strtr($vv, '/', '>').')'.PHP_EOL;
             }
         }
-        return View::make('laravel-4-1-note', array('list'=>markdown($list), 'contents'=>markdown($contents), 'active'=>'index'));
+        return View::make($view, array('list'=>markdown($list), 'contents'=>markdown($contents), 'active'=>'index'));
     }));
     
-    Route::get('{page}', function($page) use($routeName, $docDirectory)
+    Route::get('{page}', function($page) use($routeName, $docDirectory, $view)
     {
         // 构造文件路径
         $docPath  = base_path('docs/'.$docDirectory);
@@ -116,7 +77,7 @@ Route::group(array('prefix'=>'4.1-note'), function()
         // 解析成功
         list($list, $contents) = $markdown;
         $active = $page;
-        return View::make('laravel-4-1-note', compact('list', 'contents', 'active'));
+        return View::make($view, compact('list', 'contents', 'active'));
     });
 
 

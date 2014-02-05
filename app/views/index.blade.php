@@ -16,6 +16,7 @@
             <a href="docs/quick" class="button large animated shake">Quickstart</a>
             <a href="{{ route('4.1-note') }}" class="button large animated shake">4.1-note</a>
             <a href="{{ route('composer-cn') }}" class="button large animated shake">composer</a>
+            <a href="{{ route('psr') }}" class="button large animated shake">PSR</a>
         </div>
         <!-- /callto action -->
 

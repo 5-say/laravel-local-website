@@ -16,7 +16,7 @@
  */
 function markdown($value)
 {
-	return with(new dflydev\markdown\MarkdownExtraParser)->transformMarkdown($value);
+	return \Michelf\MarkdownExtra::defaultTransform($value);
 }
 
 /**
@@ -142,5 +142,8 @@ include __DIR__.'/docRoutes/composer.php';
 
 // laravel 4.1 速查笔记
 include __DIR__.'/docRoutes/laravel-4-1-note.php';
+
+// PHP-PSR-代码标准中文版
+include __DIR__.'/docRoutes/php-psr.php';
 
 
