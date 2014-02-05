@@ -122,7 +122,7 @@ $is_active = function($name='') use($active)
             <div class="boxed">
                 <ul>
                     <li><a href="{{ route('get /') }}">Welcome</a></li>
-                    <li{{ $is_active('README.MD') }}><a href="{{ route('psr') }}/README.md">readme.md</a></li>
+                    <li{{ $is_active('README.md') }}><a href="{{ route('psr') }}/README.md">readme.md</a></li>
                     <li{{ $is_active('index') }}><a href="{{ route('psr') }}">索引</a></li>
                     <li style="margin-left:1em; padding-top:0.8em;">
                         <button type="button" style="padding:0.2em 0.5em;background-color:#EB706B;"
