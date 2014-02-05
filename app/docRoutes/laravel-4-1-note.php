@@ -1,6 +1,6 @@
 <?php
 
-function analyzeMarkdown($docPath, $page, $baseRouteName)
+function analyzeMarkdown($docPath, $page, $baseRouteName, $callback = null)
 {
 # 获取文件内容
     // 中文系统路径转码
@@ -13,6 +13,10 @@ function analyzeMarkdown($docPath, $page, $baseRouteName)
     $file = File::get($docPath);
 
 # 解析 contents
+    // 执行额外的回调
+    if ($callback instanceof Closure) {
+        call_user_func_array($callback, array(&$file));
+    }
     // 变更内部链接文件夹分隔符
     $file = preg_replace_callback('/(\[.+\(\/)(.+\))/', function($matches)
     {
