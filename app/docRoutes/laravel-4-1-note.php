@@ -28,7 +28,7 @@ function analyzeMarkdown($docPath, $page, $baseRouteName, $callback = null)
     $contents = markdown($file);
 
 # 构造当前页面目录，并添加锚记
-    $i = 0; $list = '';
+    $i = 0; $list = '- 目录'.PHP_EOL;
     $contents = preg_replace_callback('/<h([1-6])>(.+)<\/h\\1>/', function($matches) use(&$i, &$list)
     {
         // 为标题添加锚记
