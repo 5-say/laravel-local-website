@@ -17,6 +17,9 @@ laravel-local-website
 ## 项目安装方法
 
 > Git 克隆本项目  
+
+![克隆](/public/assets/img/readme/mx38F80.png "Optional title")
+
 > 在本地项目目录执行安装命令
 
     composer install
