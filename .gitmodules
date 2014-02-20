@@ -26,3 +26,6 @@
 	path = docs/fig-standards
 	url = https://github.com/hfcorriez/fig-standards.git
 	branch = zh_CN
+[submodule "docs/how-use-laravel-create-a-simple-blog"]
+	path = docs/how-use-laravel-create-a-simple-blog
+	url = https://github.com/5-say/how-use-laravel-create-a-simple-blog.git

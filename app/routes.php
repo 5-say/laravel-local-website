@@ -146,4 +146,7 @@ include __DIR__.'/docRoutes/laravel-4-1-note.php';
 // PHP-PSR-代码标准中文版
 include __DIR__.'/docRoutes/php-psr.php';
 
+// 简单博客教程
+include __DIR__.'/docRoutes/simple-blog.php';
+
 
