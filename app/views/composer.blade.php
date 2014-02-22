@@ -52,7 +52,7 @@ nav#primary ul {
     padding: 0 0 1em 2em;
 }
 #documentation code {
-    font-size: 1em;
+    font-size: 0.5em;
     font-weight: normal;
 }
 #documentation strong {
